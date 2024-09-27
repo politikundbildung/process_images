@@ -8,9 +8,6 @@ from tqdm import tqdm
 import io
 from wand.image import Image as WandImage
 
-def read_image(file):
-    return np.array(PILImage.open(file).convert('L'))
-
 def deskew_image(input_path):
     # Open the image using Wand and apply deskew
     with WandImage(filename=input_path) as img:
